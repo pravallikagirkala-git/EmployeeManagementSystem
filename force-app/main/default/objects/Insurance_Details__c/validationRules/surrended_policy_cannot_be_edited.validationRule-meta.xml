@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>surrended_policy_cannot_be_edited</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT( PRIORVALUE( Status__c ) ) = &quot;Surrended&quot; ,OR( ISCHANGED(  Name ), ISCHANGED( Insurer__c ) , ISCHANGED( Status__c ) , ISCHANGED( Surrended_Date__c ) , ISCHANGED(  Sub_Type__c ), ISCHANGED( Insurance_Number__c ) , ISCHANGED( Insurance_Type__c ), ISCHANGED( Insurance_Period__c )  ))</errorConditionFormula>
+    <errorMessage>surrended policy cannot be edited</errorMessage>
+</ValidationRule>

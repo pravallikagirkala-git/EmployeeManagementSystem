@@ -1,0 +1,54 @@
+<template>
+
+    <lightning-card title="Employee Management System">
+
+        <template if:true={employees}>
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Employee Name</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Salary</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <template for:each={employees} for:item="emp">
+
+                        <tr key={emp.Id}>
+
+                            <td>{emp.Name}</td>
+
+                            <td>{emp.Department__r.Name}</td>
+
+                            <td>{emp.Status__c}</td>
+
+                            <td>{emp.Salary__c}</td>
+
+                        </tr>
+
+                    </template>
+
+                </tbody>
+
+            </table>
+
+        </template>
+
+        <template if:true={error}>
+
+            <p>Error Loading Employees</p>
+
+        </template>
+
+    </lightning-card>
+
+</template>
